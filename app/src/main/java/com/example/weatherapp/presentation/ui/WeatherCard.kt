@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -77,7 +78,7 @@ fun WeatherCard(
                         )
                     }",
                     modifier = Modifier.align(Alignment.End),
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.tertiary
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -92,13 +93,13 @@ fun WeatherCard(
                 Text(
                     text = "${weatherData.temperatureCelsius}°C",
                     fontSize = 50.sp,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.tertiary
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = weatherData.weatherType.weatherDesc,
                     fontSize = 20.sp,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.tertiary
                 )
                 Spacer(modifier = Modifier.height(32.dp))
                 Row(
@@ -109,22 +110,22 @@ fun WeatherCard(
                         value = weatherData.pressure.roundToInt(),
                         unit = "hpa",
                         icon = ImageVector.vectorResource(id = R.drawable.ic_pressure),
-                        iconTint = Color.White,
+                        iconTint = MaterialTheme.colorScheme.tertiary,
                         textStyle = TextStyle(color = Color.White)
                     )
                     WeatherDataDisplay(
                         value = weatherData.humidity.roundToInt(),
                         unit = "%",
                         icon = ImageVector.vectorResource(id = R.drawable.ic_drop),
-                        iconTint = Color.White,
+                        iconTint = MaterialTheme.colorScheme.tertiary,
                         textStyle = TextStyle(color = Color.White)
                     )
                     WeatherDataDisplay(
                         value = weatherData.windSpeed.roundToInt(),
                         unit = "km/h",
                         icon = ImageVector.vectorResource(id = R.drawable.ic_wind),
-                        iconTint = Color.White,
-                        textStyle = TextStyle(color = Color.White)
+                        iconTint = MaterialTheme.colorScheme.tertiary,
+                        textStyle = TextStyle(color = MaterialTheme.colorScheme.tertiary)
                     )
                 }
             }
